@@ -8,13 +8,15 @@ import org.springframework.stereotype.Service
 class KafkaService(
     private val sender: KafkaTemplate<String, String>
 ) {
-    private val TOPIC = "topic"
+    companion object {
+        private const val TOPIC = "topic"
+    }
 
     fun produce() {
         sender.send(TOPIC, "aaaa")
     }
 
-    @KafkaListener(topics = ["topic"], groupId = "test-consumer-group")
+    @KafkaListener(topics = [TOPIC], groupId = "test-consumer-group")
     fun consume(message: String) {
         println(message)
     }
