@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/mysql
+    url: jdbc:mysql://localhost:3306/test
     username: test
-    password: 1234
+    password: fltnl321A!
   kafka:
     consumer:
       bootstrap-servers: localhost:9092
@@ -11,7 +11,11 @@ spring:
       auto-offset-reset: latest
     producer:
       bootstrap-servers: localhost:9092
-
   redis:
     host: localhost
     port: 6379
+  data:
+    mongodb:
+      database: test
+      port: 27017
+      host: localhost
