@@ -1,9 +1,8 @@
-package com.example.dockertest
+package com.example.dockertest.mongod
 
 import com.example.dockertest.mongod.Doc
 import com.example.dockertest.mongod.DocRepo
 import org.springframework.stereotype.Service
-import reactor.core.publisher.Mono
 
 @Service
 class MongoService(

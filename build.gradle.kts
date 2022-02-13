@@ -22,13 +22,8 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 
     implementation("org.springframework.boot:spring-boot-starter-data-elasticsearch")
-
     implementation("org.springframework.boot:spring-boot-starter-data-mongodb-reactive")
-
     implementation("org.springframework.boot:spring-boot-starter-data-redis")
-
-    //implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    //runtimeOnly("mysql:mysql-connector-java")
 
     implementation("org.springframework.kafka:spring-kafka")
     testImplementation("org.springframework.kafka:spring-kafka-test")

@@ -1,5 +1,7 @@
 package com.example.dockertest
 
+import com.example.dockertest.elasticsearch.ElasticSearchService
+import com.example.dockertest.mongod.MongoService
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
@@ -12,6 +14,8 @@ class DockertestApplicationTests {
     private lateinit var redisService: RedisService
     @Autowired
     private lateinit var mongoService: MongoService
+    @Autowired
+    private lateinit var elasticSearchService: ElasticSearchService
     
     @Test
     fun `레디스 쓰기`() {
@@ -37,5 +41,17 @@ class DockertestApplicationTests {
     fun `몽고 읽기`() {
         val doc = mongoService.read()
         println(doc)
+    }
+
+    @Test
+    fun `ES 쓰기`() {
+        elasticSearchService.write()
+    }
+
+    @Test
+    fun `ES 읽기`() {
+        elasticSearchService.write()
+
+        elasticSearchService.read()
     }
 }
