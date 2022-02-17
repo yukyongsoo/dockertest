@@ -29,7 +29,8 @@ class DockertestApplicationTests {
 
     @Test
     fun `카프카 쓰기`() {
-        kafkaService.produce()
+        for (i in 1..1000)
+            kafkaService.produce()
     }
 
     @Test
