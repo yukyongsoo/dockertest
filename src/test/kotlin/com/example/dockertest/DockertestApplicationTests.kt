@@ -1,6 +1,7 @@
 package com.example.dockertest
 
 import com.example.dockertest.elasticsearch.ElasticSearchService
+import com.example.dockertest.kafka.KafkaService
 import com.example.dockertest.mongod.MongoService
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -27,10 +28,10 @@ class DockertestApplicationTests {
         redisService.get()
     }
 
+    //Spring cloud stream에서는 실제로 카프카를 이용하지 않고 목킹한다
     @Test
     fun `카프카 쓰기`() {
-        for (i in 1..1000)
-            kafkaService.produce()
+        for (i in 1..1000) kafkaService.produce()
     }
 
     @Test

@@ -1,11 +1,4 @@
 spring:
-  kafka:
-    consumer:
-      bootstrap-servers: localhost:29092
-      group-id: test-consumer-group
-      auto-offset-reset: latest
-    producer:
-      bootstrap-servers: localhost:29092
   redis:
     host: localhost
     port: 6379
@@ -14,7 +7,15 @@ spring:
       database: test
       port: 27017
       host: localhost
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: "localhost:29092"
+      bindings:
+        test:
+          group: test-consumer-group
+          destination: test
+          content-type: application/json
   elasticsearch:
-    rest:
-      uris: http://localhost:9200
-
+    uris: http://localhost:9200
