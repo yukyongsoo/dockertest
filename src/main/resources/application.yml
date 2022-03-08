@@ -12,10 +12,31 @@ spring:
       kafka:
         binder:
           brokers: "localhost:29092"
+      kinesis:
+        binder:
+          checkpoint:
+            table: <<table>>
+          locks:
+            table: <<table>>
       bindings:
         test:
           group: test-consumer-group
           destination: test
           content-type: application/json
+          binder: kafka
+        test-kinesis:
+          group: test-consumer-group
+          destination: <<your stream Name>>
+          content-type: application/json
+          binder: kinesis
   elasticsearch:
     uris: http://localhost:9200
+cloud:
+  aws:
+    credentials:
+      access-key: <<access-key>>
+      secret-key: <<secret-key>>
+    region:
+      static: ap-northeast-2
+    stack:
+      auto: false

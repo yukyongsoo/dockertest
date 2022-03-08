@@ -25,10 +25,10 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-mongodb-reactive")
     implementation("org.springframework.boot:spring-boot-starter-data-redis")
 
-    implementation("org.springframework.cloud:spring-cloud-stream")
     implementation("org.springframework.cloud:spring-cloud-starter-stream-kafka")
-    testImplementation("org.springframework.cloud:spring-cloud-stream-test-support")
+    implementation("org.springframework.cloud:spring-cloud-stream-binder-kinesis:2.2.0")
 
+    testImplementation("org.springframework.cloud:spring-cloud-stream-test-support")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 

@@ -1,19 +1,19 @@
-package com.example.dockertest.kafka
+package com.example.dockertest.kinesis
 
 import org.springframework.cloud.stream.annotation.StreamListener
 import org.springframework.messaging.support.MessageBuilder
 import org.springframework.stereotype.Service
 
 @Service
-class KafkaService(
-    private val kafkaDescription: KafkaDescription
+class KinesisService(
+    private val kinesisDescription: KinesisDescription
 ) {
     fun produce() {
-        kafkaDescription.getSenderChannel()
+        kinesisDescription.getSenderChannel()
             .send(MessageBuilder.withPayload("asdf").build())
     }
 
-    @StreamListener("test")
+    @StreamListener("test-kinesis")
     fun read(word: String) {
         println(word)
     }

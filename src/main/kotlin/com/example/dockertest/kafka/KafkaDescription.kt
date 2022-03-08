@@ -5,7 +5,7 @@ import org.springframework.cloud.stream.annotation.Output
 import org.springframework.messaging.MessageChannel
 import org.springframework.messaging.SubscribableChannel
 
-interface ChanndelDescription {
+interface KafkaDescription {
     @Output("test")
     fun getSenderChannel(): MessageChannel
 
