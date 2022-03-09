@@ -16,8 +16,6 @@ spring:
         binder:
           checkpoint:
             table: <<table>>
-          locks:
-            table: <<table>>
       bindings:
         test:
           group: test-consumer-group
